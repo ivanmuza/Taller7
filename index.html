@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>
+            Formulario
+        </title>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/estilos.css" rel="stylesheet"/>
+        <link href="css/form-validation.css" rel="stylesheet"/>
+        <link href="css/font-awesome-4/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+            </script>
+        </link>
+    </head>
+    <body onload="onloadPage();">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">
+                    Bienvenido, Registrese!
+                </h1>
+            </div>
+            <hr>
+                <div class="col-md-12 order-md-1">
+                    <form action="integrantes.html" class="needs-validation" id="formPage" novalidate="">
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Nombre
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" maxlength="25" required="" type="text">
+                                            <div class="invalid-feedback" style="width: 100%;">
+                                                Por favor ingrese su Nombre.
+                                            </div>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Apellido
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" maxlength="25" required="" type="text">
+                                            <div class="invalid-feedback" style="width: 100%;">
+                                                Por favor ingrese su Apellido.
+                                            </div>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Usuario
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" maxlength="25" required="" type="text">
+                                            <div class="invalid-feedback" style="width: 100%;">
+                                                Por favor ingrese su Usuario.
+                                            </div>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Teléfono
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" maxlength="20" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required="" title="Numbers only" type="text">
+                                            <div class="invalid-feedback" style="width: 100%;">
+                                                Su teléfono es requerido.
+                                            </div>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Fecha de Nacimiento
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" id="birthday" name="birthday" required="" type="date" value="">
+                                            <div class="invalid-feedback" style="width: 100%;">
+                                                Por favor ingrese su fecha de nacimiento
+                                            </div>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Edad
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input class="form-control" id="age" name="age" readonly="" type="text" value="">
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="font-italic" style="font-weight: bold;">
+                                Email
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input class="form-control" maxlength="120" required="" type="email">
+                                    <div class="invalid-feedback" style="width: 100%;">
+                                        Por favor ingrese su email de manera correcta.
+                                    </div>
+                                </input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        contraseña
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <div class="input-group">
+                                            <input aria-label="..." class="form-control" id="pass1" maxlength="20" minlength="15" required="" type="password">
+                                                <div class="input-group-btn">
+                                                    <button aria-label="Help" class="btn btn-default" onclick="togglePass('1');" type="button">
+                                                        <span class="fa fa-eye" id="pass-eye1">
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </input>
+                                        </div>
+                                        <div id="pass1_feedback" style="width: 100%; color: #dc3545; display: none;">
+                                            La contraseña debe tener entre 15 y 20 caracteres.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label class="font-italic" style="font-weight: bold;">
+                                        Confirmar Contraseña
+                                    </label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <div class="input-group">
+                                            <input aria-label="..." class="form-control" id="pass2" maxlength="20" minlength="15" required="" type="password">
+                                                <div class="input-group-btn">
+                                                    <button aria-label="Help" class="btn btn-default" onclick="togglePass('2');" type="button">
+                                                        <span class="fa fa-eye" id="pass-eye2">
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </input>
+                                        </div>
+                                        <div id="pass2_feedback" style="width: 100%; color: #dc3545; display: none;">
+                                            Las contraseñas deben ser iguales.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <select class="input-group-prepend" id="dep" onchange="getMunicipio(this)" required="" style="width: 100%">
+                                            <option value="">
+                                                Seleccionar Departamento
+                                            </option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor selecciona un departamento válido.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <select class="input-group-prepend" id="mun" onchange="" required="" style="width: 100%">
+                                            <option value="">
+                                                Seleccionar Municipio
+                                            </option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor selecciona un país válido.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </hr>
+        </div>
+    </body>
+</html>
+<hr>
+    <div class="container">
+        <a class="btn btn-info" id="getUsers" role="button">
+            Consultar Datos
+        </a>
+        <hr>
+            <input class="form-control" id="myInput" placeholder="Buscar" type="text">
+                <br>
+                    <div id="table">
+                    </div>
+                </br>
+            </input>
+        </hr>
+    </div>
+    <hr class="mb-4">
+        <button class="btn btn-dark btn-lg btn-block" type="submit">
+            Registrarse
+        </button>
+    </hr>
+    <hr>
+    </hr>
+</hr>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <ul class="list-inline">
+    </ul>
+</footer>
+<script src="js/function_page.js">
+</script>
+<script src="js/form-validation.js">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+    $(function(){
+    $('#birthday').on('change', calcularEdad);
+  });
+  function calcularEdad() {
+    fecha = $(this).val();
+    var hoy = new Date();
+    var cumpleanos = new Date(fecha);
+    var edad = hoy.getFullYear() - cumpleanos.getFullYear();
+    var m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+      edad--;
+    }
+    $('#age').val(edad);
+  }
+</script>
+<script>
+    $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
