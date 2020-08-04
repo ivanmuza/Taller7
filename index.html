@@ -17,7 +17,7 @@
             </script>
         </link>
     </head>
-    <body onload="onloadPage();">
+    <body onload="onloadPage();getDepartamentos()">
         <div class="container">
             <div class="jumbotron">
                 <h1 class="display-4">
@@ -226,20 +226,6 @@
         </div>
     </body>
 </html>
-<hr>
-    <div class="container">
-        <a class="btn btn-info" id="getUsers" role="button">
-            Consultar Datos
-        </a>
-        <hr>
-            <input class="form-control" id="myInput" placeholder="Buscar" type="text">
-                <br>
-                    <div id="table">
-                    </div>
-                </br>
-            </input>
-        </hr>
-    </div>
     <hr class="mb-4">
         <button class="btn btn-dark btn-lg btn-block" type="submit">
             Registrarse
@@ -247,7 +233,6 @@
     </hr>
     <hr>
     </hr>
-</hr>
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <ul class="list-inline">
     </ul>

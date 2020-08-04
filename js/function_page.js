@@ -123,6 +123,25 @@ function showContent() {
         });
     }
 
+function getDepartamentos(){
+var elSelect= document.getElementById("dep");
+  //console.log(elSelect.value)
+  let url = 'http://datos.gov.co/resource/xdk5-pm3f.json?$SELECT=distinct%20departamento'
+  fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    myJson.forEach(item => {
+       var depOption = document.createElement("option");
+       depOption.className = 'dep_option'
+       depOption.value = item.departamento
+       depOption.text = item.departamento
+       dep.prepend(depOption)
+    })
+  });
+}
+
 function getMunicipio(elSelect){
 var depart= document.getElementById("dep");
 
