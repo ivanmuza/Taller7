@@ -66,63 +66,6 @@ function showContent() {
         }
     }
 
-
-    document.getElementById('getUsers').addEventListener('click', fetchUsers);
-
-    function fetchUsers() {
-      fetch('https://jsonplaceholder.typicode.com/users')
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          let response = '';
-          response += `<div>
-          <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Usuario</th>
-              <th>Email</th>
-              <th>Dirección</th>
-              <th>Geo</th>
-              <th>Teléfono</th>
-              <th>Sitio Web</th>
-              <th>Compañía</th>
-            </tr>
-            </thead>
-            <tbody id="myTable">
-              <tr>
-                <td>${data[0].id}</td>
-                <td>${data[0].name}</td>
-                <td>${data[0].username}</td>
-                <td>${data[0].email}</td>
-                <td>${data[0].address.city}, ${data[0].address.street}, ${data[0].address.suite}, ${data[0].address.zipcode}</td>
-                <td>${data[0].address.geo.lat},  ${data[0].address.geo.lng}</td>
-                <td>${data[0].phone}</td>
-                <td>${data[0].website}</td>
-                <td> ${data[0].company.name} </td>
-              </tr>`;
-          for (let i = 1; i < data.length; i++) {
-            response += `<tr>
-                  <td>${data[i].id}</td>
-                  <td>${data[i].name}</td>
-                  <td>${data[i].username}</td>
-                  <td>${data[i].email}</td>
-                  <td>${data[i].address.city}, ${data[i].address.street}, ${data[i].address.suite}, ${data[i].address.zipcode}</td>
-                  <td>${data[i].address.geo.lat},  ${data[i].address.geo.lng}</td>
-                  <td>${data[i].phone}</td>
-                  <td>${data[i].website}</td>
-                  <td> ${data[i].company.name} </td>
-                </tr>`;
-          }
-
-          response += `</tbody></table></div>`;
-
-          document.getElementById("table").innerHTML = response;
-        });
-    }
-
 function getDepartamentos(){
 var elSelect= document.getElementById("dep");
   //console.log(elSelect.value)
