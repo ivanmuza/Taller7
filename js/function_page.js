@@ -55,17 +55,6 @@ function onloadPage() {
     pass2.addEventListener('change', validarContraseñas);
 }
 
-function showContent() {
-        element = document.getElementById("content");
-        check = document.getElementById("check");
-        if (check.checked) {
-            element.style.display='block';
-        }
-        else {
-            element.style.display='none';
-        }
-    }
-
 function getDepartamentos(){
 var elSelect= document.getElementById("dep");
   //console.log(elSelect.value)
